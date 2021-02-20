@@ -1,10 +1,8 @@
-name: healthy_everyday
+name: healthy_everyday_dev
 
 on:
   push:
-    branches: action
-  schedule:
-    - cron: '0 18 * * *'
+    branches: dev
 
 jobs:
 
