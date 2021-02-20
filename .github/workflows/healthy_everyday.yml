@@ -30,5 +30,8 @@ jobs:
         env:
           ACTION_USERNAME: ${{ secrets.ACTION_USERNAME }}
           ACTION_PASSWORD: ${{ secrets.ACTION_PASSWORD }}
-        run: |
-          python healthy_everyday_action.py
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 3
+          max_attempts: 3
+          command: python healthy_everyday_action.py
